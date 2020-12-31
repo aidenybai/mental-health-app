@@ -2,6 +2,8 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <script src="https://unpkg.com/lucia"></script>
     <style>
       div {
@@ -15,48 +17,48 @@
   <body>
     <div id="app">
       <form @submit.prevent="this.submit()">
-        <center><h1>Please answer all of these questons truthfully</h1></center>
+        <h1>Mental Health Application</h1>
+        <h3>Please answer all of these questons truthfully</h3>
         <br />
-        <center>
-          <div>Enter your name: <input required type="text" name="name" value="First Last" /></div>
-        </center>
+
+        <div>
+          Enter your name:
+          <input required type="text" name="name" value="First Last" l-model="this.answers.name" />
+        </div>
         <br />
-        <center>
-          <div>Enter the date: <input required type="text" name="date" value="00/00/0000" /></div>
-        </center>
+        <div>
+          Enter the date:
+          <input required type="text" name="date" value="00/00/0000" l-model="this.answers.date" />
+        </div>
         <br />
-        <center>
-          Select your grade:
-          <select required name="grade">
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-        </center>
+        Select your grade:
+        <select required name="grade" l-model="this.answers.grade">
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+        </select>
         <br />
         <br />
-        <center>
-          Select your current counsler:
-          <select required name="counsler">
-            <option>Casteel</option>
-            <option>Richardson</option>
-            <option>Liebe</option>
-            <option>Lincoln</option>
-            <option>Rollman</option>
-            <option>Warta</option>
-            <option>Witherspoon</option>
-          </select>
-        </center>
+        Select your current counselor:
+        <select required name="counselor" l-model="this.answers.counselor">
+          <option>Casteel</option>
+          <option>Richardson</option>
+          <option>Liebe</option>
+          <option>Lincoln</option>
+          <option>Rollman</option>
+          <option>Warta</option>
+          <option>Witherspoon</option>
+        </select>
         <br />
-        <h1>
+        <h3>
           Over the last 2 weeks, how often have you been bothered by any of the following problems?
-        </h1>
+        </h3>
 
         <div>
           1. Little interest or pleasure in doing things
           <br />
-          <select required name="d1" l-model="this.d1">
+          <select required name="d1" l-model="this.answers.d1">
             <option disabled selected value> -- select an option -- </option>
             <option>Not at all</option>
             <option>Several Days</option>
@@ -68,7 +70,7 @@
         <div>
           2. Feeling down, depressed, or hopeless
           <br />
-          <select required name="d2" l-model="this.d2">
+          <select required name="d2" l-model="this.answers.d2">
             <option disabled selected value> -- select an option -- </option>
             <option>Not at all</option>
             <option>Several Days</option>
@@ -80,7 +82,7 @@
         <div>
           3. Trouble falling or staing asleep, or sleeping too much
           <br />
-          <select required name="d3" l-model="this.d3">
+          <select required name="d3" l-model="this.answers.d3">
             <option disabled selected value> -- select an option -- </option>
             <option>Not at all</option>
             <option>Several Days</option>
@@ -92,7 +94,7 @@
         <div>
           4. Feeling tired or having little energy
           <br />
-          <select required name="d4" l-model="this.d4">
+          <select required name="d4" l-model="this.answers.d4">
             <option disabled selected value> -- select an option -- </option>
             <option>Not at all</option>
             <option>Several Days</option>
@@ -104,7 +106,7 @@
         <div>
           5. Poor apetite or overeating
           <br />
-          <select required name="d1" l-model="this.d1">
+          <select required name="d5" l-model="this.answers.d5">
             <option disabled selected value> -- select an option -- </option>
             <option>Not at all</option>
             <option>Several Days</option>
@@ -114,10 +116,10 @@
         </div>
 
         <div>
-          6. Feeling bad about yourself- or that you are a failure or have let yourself or you family
-          down
+          6. Feeling bad about yourself- or that you are a failure or have let yourself or you
+          family down
           <br />
-          <select required name="d1" l-model="this.d1">
+          <select required name="d6" l-model="this.answers.d6">
             <option disabled selected value> -- select an option -- </option>
             <option>Not at all</option>
             <option>Several Days</option>
@@ -129,7 +131,7 @@
         <div>
           7. Trouble concentrating on things, such as reading the newspaper or watching television
           <br />
-          <select required name="d1" l-model="this.d1">
+          <select required name="d7" l-model="this.answers.d7">
             <option disabled selected value> -- select an option -- </option>
             <option>Not at all</option>
             <option>Several Days</option>
@@ -142,7 +144,7 @@
           8. Moving or speaking so slowly that other people could have noticed(Or the opposite-being
           so fidgety or restless that you have been moving around a lot more than usual)
           <br />
-          <select required name="d1" l-model="this.d1">
+          <select required name="d8" l-model="this.answers.d8">
             <option disabled selected value> -- select an option -- </option>
             <option>Not at all</option>
             <option>Several Days</option>
@@ -154,7 +156,7 @@
         <div>
           9. Thoughts that you would be better off dead, or of hurting yourself
           <br />
-          <select required name="d1" l-model="this.d1">
+          <select required name="d9" l-model="this.answers.d9">
             <option disabled selected value> -- select an option -- </option>
             <option>Not at all</option>
             <option>Several Days</option>
@@ -167,19 +169,19 @@
           10. If you checked off any problems, how difficult have these problems made it for you at
           work, home, or with other people?
           <br />
-          <select required name="d1" l-model="this.d1">
+          <select required name="d10" l-model="this.answers.d10">
             <option disabled selected value> -- select an option -- </option>
-            <option>Not at all</option>
-            <option>Several Days</option>
-            <option>More than half the days</option>
-            <option>Nearly every day</option>
+            <option>Not difficult at all</option>
+            <option>Somewhat difficult</option>
+            <option>Very difficult</option>
+            <option>Extremely difficult</option>
           </select>
         </div>
 
         <div>
           11. Feeling nervous, anxious, or on edge
           <br />
-          <select required name="a1" l-model="this.a1">
+          <select required name="a1" l-model="this.answers.a1">
             <option disabled selected value> -- select an option -- </option>
             <option>Not at all</option>
             <option>Several Days</option>
@@ -191,97 +193,85 @@
         <div>
           12. Not being able to stop or control worrying
           <br />
-          <input required type="radio" name="a2" /> Not at all
-          <br />
-          <input required type="radio" name="a2" /> Several days
-          <br />
-          <input required type="radio" name="a2" /> More than half the days
-          <br />
-          <input required type="radio" name="a2" /> Nearly every day
+          <select required name="a2" l-model="this.answers.a2">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Not at all</option>
+            <option>Several Days</option>
+            <option>More than half the days</option>
+            <option>Nearly every day</option>
+          </select>
         </div>
 
         <div>
           13. Worrying too much about different things
           <br />
-          <input required type="radio" name="a3" /> Not at all
-          <br />
-          <input required type="radio" name="a3" /> Several days
-          <br />
-          <input required type="radio" name="a3" /> More than half the days
-          <br />
-          <input required type="radio" name="a3" /> Nearly every day
+          <select required name="a3" l-model="this.answers.a3">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Not at all</option>
+            <option>Several Days</option>
+            <option>More than half the days</option>
+            <option>Nearly every day</option>
+          </select>
         </div>
 
         <div>
           14. Trouble relaxing
           <br />
-          <input required type="radio" name="a4" /> Not at all
-          <br />
-          <input required type="radio" name="a4" /> Several days
-          <br />
-          <input required type="radio" name="a4" /> More than half the days
-          <br />
-          <input required type="radio" name="a4" /> Nearly every day
+          <select required name="a4" l-model="this.answers.a4">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Not at all</option>
+            <option>Several Days</option>
+            <option>More than half the days</option>
+            <option>Nearly every day</option>
+          </select>
         </div>
 
         <div>
-          15. Not being able to stop or control worrying
+          15. Being so restless that it is hard to sit still
           <br />
-          <input required type="radio" name="a5" /> Not at all
-          <br />
-          <input required type="radio" name="a5" /> Several days
-          <br />
-          <input required type="radio" name="a5" /> More than half the days
-          <br />
-          <input required type="radio" name="a5" /> Nearly every day
+          <select required name="a5" l-model="this.answers.a5">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Not at all</option>
+            <option>Several Days</option>
+            <option>More than half the days</option>
+            <option>Nearly every day</option>
+          </select>
         </div>
 
         <div>
           16. Becoming easily annoyed or irritable
           <br />
-          <input required type="radio" name="a6" /> Not at all
-          <br />
-          <input required type="radio" name="a6" /> Several days
-          <br />
-          <input required type="radio" name="a6" /> More than half the days
-          <br />
-          <input required type="radio" name="a6" /> Nearly every day
+          <select required name="a6" l-model="this.answers.a6">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Not at all</option>
+            <option>Several Days</option>
+            <option>More than half the days</option>
+            <option>Nearly every day</option>
+          </select>
         </div>
 
         <div>
           17. Feeling afraid, as if something awful might happen
           <br />
-          <input required type="radio" name="a7" /> Not at all
-          <br />
-          <input required type="radio" name="a7" /> Several days
-          <br />
-          <input required type="radio" name="a7" /> More than half the days
-          <br />
-          <input required type="radio" name="a7" /> Nearly every day
+          <select required name="a7" l-model="this.answers.a7">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Not at all</option>
+            <option>Several Days</option>
+            <option>More than half the days</option>
+            <option>Nearly every day</option>
+          </select>
         </div>
 
-        <div>
-          17. Feeling afraid, as if something awful might happen
-          <br />
-          <input required type="radio" name="a7" /> Not at all
-          <br />
-          <input required type="radio" name="a7" /> Several days
-          <br />
-          <input required type="radio" name="a7" /> More than half the days
-          <br />
-          <input required type="radio" name="a7" /> Nearly every day
-        </div>
-
-        <h1>
+        <h3>
           Has there been a period of time when you were not your usual self and...
-        </h1>
+        </h3>
         <br />
 
         <div>
-          18. You felt so good or hyper that other people though you were not your normal self or were
-          so hyper that you got into trouble?
+          18. You felt so good or hyper that other people though you were not your normal self or
+          were so hyper that you got into trouble?
           <br />
-          <select required name="b1" l-model="this.b1">
+          <select required name="b1" l-model="this.answers.b1">
             <option disabled selected value> -- select an option -- </option>
             <option>Yes</option>
             <option>No</option>
@@ -291,7 +281,7 @@
         <div>
           19. You were so irritable that you shouted at people or started fights or arguments?
           <br />
-          <select required name="b1" l-model="this.b1">
+          <select required name="b2" l-model="this.answers.b2">
             <option disabled selected value> -- select an option -- </option>
             <option>Yes</option>
             <option>No</option>
@@ -300,7 +290,7 @@
 
         <div>
           20. You felt much more self-confident than usual?
-          <select required name="b1" l-model="this.b1">
+          <select required name="b3" l-model="this.answers.b3">
             <option disabled selected value> -- select an option -- </option>
             <option>Yes</option>
             <option>No</option>
@@ -309,7 +299,7 @@
 
         <div>
           21. You got much less sleep than usual and found you didn’t really miss it?
-          <select required name="b1" l-model="this.b1">
+          <select required name="b4" l-model="this.answers.b4">
             <option disabled selected value> -- select an option -- </option>
             <option>Yes</option>
             <option>No</option>
@@ -319,7 +309,7 @@
         <div>
           22. You were much more talkative or spoke much faster than usual?
 
-          <select required name="b1" l-model="this.b1">
+          <select required name="b5" l-model="this.answers.b5">
             <option disabled selected value> -- select an option -- </option>
             <option>Yes</option>
             <option>No</option>
@@ -329,7 +319,7 @@
         <div>
           23. Thoughts raced through your head or you couldn’t slow your mind down?
 
-          <select required name="b1" l-model="this.b1">
+          <select required name="b6" l-model="this.answers.b6">
             <option disabled selected value> -- select an option -- </option>
             <option>Yes</option>
             <option>No</option>
@@ -337,9 +327,9 @@
         </div>
 
         <div>
-          24. You were so easily distracted by things around you that you had trouble concentrating or
-          staying on track?
-          <select required name="b1" l-model="this.b1">
+          24. You were so easily distracted by things around you that you had trouble concentrating
+          or staying on track?
+          <select required name="b7" l-model="this.answers.b7">
             <option disabled selected value> -- select an option -- </option>
             <option>Yes</option>
             <option>No</option>
@@ -348,94 +338,98 @@
 
         <div>
           25. You had much more energy than usual?
-
-          <input required type="radio" name="b8" /> Yes
-          <br />
-          <input required type="radio" name="b8" /> No
-          <br />
+          <select required name="b8" l-model="this.answers.b8">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
-          26. You were much more social or outgoing than usual, for example, you telephoned friends in
-          the middle of the night?
-
-          <input required type="radio" name="b9" /> Yes
-          <br />
-          <input required type="radio" name="b9" /> No
-          <br />
+          26. You were much more social or outgoing than usual, for example, you telephoned friends
+          in the middle of the night?
+          <select required name="b9" l-model="this.answers.b9">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
           27. You were much more interested in sex than usual?
-
-          <input required type="radio" name="b10" /> Yes
-          <br />
-          <input required type="radio" name="b10" /> No
-          <br />
+          <select required name="b10" l-model="this.answers.b10">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
           28. You did things that were unusual for you or that other people might have thought were
           excessive, foolish, or risky?
-          <input required type="radio" name="b11" /> Yes
-          <br />
-          <input required type="radio" name="b11" /> No
-          <br />
+          <select required name="b11" l-model="this.answers.b11">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
           29. Spending money got you or your family into trouble?
-          <input required type="radio" name="b12" /> Yes
-          <br />
-          <input required type="radio" name="b12" /> No
-          <br />
+          <select required name="b12" l-model="this.answers.b12">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
           30. If you checked YES to more than one of the above, have several of these ever happened
           during the same period of time?
-          <input required type="radio" name="b13" /> Yes
-          <br />
-          <input required type="radio" name="b13" /> No
-          <br />
+          <select required name="b13" l-model="this.answers.b13">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
           31. How much of a problem did any of these cause you?
-          <input required type="radio" name="b14" /> No problem
-          <br />
-          <input required type="radio" name="b14" /> Minor Problem
-          <br />
-          <input required type="radio" name="b14" /> Moderate Problem
-          <br />
-          <input required type="radio" name="b14" /> Serious Problem
-          <br />
+          <select required name="b14" l-model="this.answers.b14">
+            <option disabled selected value> -- select an option -- </option>
+            <option>No Problem</option>
+            <option>Minor Problem</option>
+            <option>Moderate Problem</option>
+            <option>Serious Problem</option>
+          </select>
         </div>
 
         <div>
           32. Have any of your blood relatives had manic-depressive illness or bipolar disorder?
-          <input required type="radio" name="b15" /> Yes
-          <br />
-          <input required type="radio" name="b15" /> No
-          <br />
+          <select required name="b15" l-model="this.answers.b15">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
           33. Has a health professional ever told you that you have manic-depressive illness or
           bipolar disorder?
-          <input required type="radio" name="b16" /> Yes
-          <br />
-          <input required type="radio" name="b16" /> No
-          <br />
+          <select required name="b16" l-model="this.answers.b16">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
-        <h1>In the past month, have you</h1>
+        <h3>In the past month, have you</h3>
         <br />
 
         <div>
           34. had nightmares about the event(s) or thought about the event(s) when you did not want
           to?
-          <select required name="p1" l-model="this.p1">
+          <select required name="p1" l-model="this.answers.p1">
             <option disabled selected value> -- select an option -- </option>
             <option>Yes</option>
             <option>No</option>
@@ -445,115 +439,110 @@
         <div>
           35. tried hard not to think about the event(s) or went out of your way to avoid situations
           that reminded you of the event(s)?
-          <input required type="radio" name="p2" /> Yes
-          <br />
-          <input required type="radio" name="p2" /> No
-          <br />
+          <select required name="p2" l-model="this.answers.p2">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
           36. been constantly on guard, watchful, or easily startled?
-          <input required type="radio" name="p3" /> Yes
-          <br />
-          <input required type="radio" name="p3" /> No
-          <br />
+          <select required name="p3" l-model="this.answers.p3">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
           37. felt numb or detached from people, activities, or your surroundings?
-          <input required type="radio" name="p4" /> Yes
-          <br />
-          <input required type="radio" name="p4" /> No
-          <br />
+          <select required name="p4" l-model="this.answers.p4">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
           38. felt guilty or unable to stop blaming yourself or others for the event(s) or any
           problems the event(s) may have caused?
-          <input required type="radio" name="p5" /> Yes
-          <br />
-          <input required type="radio" name="p5" /> No
-          <br />
+          <select required name="p5" l-model="this.answers.p5">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
-          39. How much more or less do you feel you worry about your weight and body shape than other
-          people your age?
+          39. How much more or less do you feel you worry about your weight and body shape than
+          other people your age?
           <br />
-          <input required type="radio" name="e1" /> I worry a lot less than other people
-          <br />
-          <input required type="radio" name="e1" /> I worry a little less than other people
-          <br />
-          <input required type="radio" name="e1" /> I worry about the same as other people
-          <br />
-          <input required type="radio" name="e1" /> I worry a little more thatn other people
-          <br />
-          <input required type="radio" name="e1" /> I worry a lot more than other people
+          <select required name="e1" l-model="this.answers.e1">
+            <option disabled selected value> -- select an option -- </option>
+            <option>I worry a lot less than other people</option>
+            <option>I worry a little less than other people</option>
+            <option>I worry about the same as other people</option>
+            <option>I worry a little more than other people</option>
+            <option>I worry a lot more than other people</option>
+          </select>
           <br />
         </div>
 
         <div>
           40. How afraid are you of gaining 3 pounds?
           <br />
-          <input required type="radio" name="e2" /> Not afraid of gaining
-          <br />
-          <input required type="radio" name="e2" /> Slightly afraid of gaining
-          <br />
-          <input required type="radio" name="e2" /> Moderately afraid of gaining
-          <br />
-          <input required type="radio" name="e2" /> Very afraid of ganing
-          <br />
-          <input required type="radio" name="e2" /> Terrified of gaining
+          <select required name="e2" l-model="this.answers.e2">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Not afraid of gaining</option>
+            <option>Slightly afraid of gaining</option>
+            <option>Moderately afraid of gaining</option>
+            <option>Very afraid of gaining</option>
+            <option>Terrified of gaining</option>
+          </select>
           <br />
         </div>
 
         <div>
           41. When was the last time you went on a diet?
           <br />
-          <input required type="radio" name="e3" /> I have never been on a diet
-          <br />
-          <input required type="radio" name="e3" /> I was on a diet about one year ago
-          <br />
-          <input required type="radio" name="e3" /> I was on a diet about 6 months ago
-          <br />
-          <input required type="radio" name="e3" /> I was on a diet about 3 months ago
-          <br />
-          <input required type="radio" name="e3" /> I was on a diet about 1 month ago
-          <br />
-          <input required type="radio" name="e3" /> I was on a diet less than 1 month ago
-          <br />
-          <input required type="radio" name="e3" /> I'm on a diet now
+          <select required name="e3" l-model="this.answers.e3">
+            <option disabled selected value> -- select an option -- </option>
+            <option>I have never been on a diet</option>
+            <option>I was on a diet about one year ago</option>
+            <option>I was on a diet about 6 months ago</option>
+            <option>I was on a diet about 3 months ago</option>
+            <option>I was on a diet about 1 month ago</option>
+            <option>I was on a diet less than a month ago</option>
+            <option>I'm on a diet now</option>
+          </select>
           <br />
         </div>
 
         <div>
           42. Compared to other things in your life, how important is your weight to you?
           <br />
-          <input required type="radio" name="e4" /> My weight is not important compared to other
-          things in my life
-          <br />
-          <input required type="radio" name="e4" /> My weight is a little more important than some
-          other things in my life
-          <br />
-          <input required type="radio" name="e4" /> My weight is more important than most, but not
-          all, things in my life
-          <br />
-          <input required type="radio" name="e4" /> My weight is the most important thing in my life
+          <select required name="e4" l-model="this.answers.e4">
+            <option disabled selected value> -- select an option -- </option>
+            <option>My weight is not important compared to other things in my life</option>
+            <option>My weight is a little more important thatn some other things in my life</option>
+            <option>My weight is more important than mose, but not all, things in my life</option>
+            <option>My weight is the most important thing in my life</option>
+          </select>
           <br />
         </div>
 
         <div>
           43. Do you ever feel fat?
           <br />
-          <input required type="radio" name="e5" /> Never
-          <br />
-          <input required type="radio" name="e5" /> Rarely
-          <br />
-          <input required type="radio" name="e5" /> Sometimes
-          <br />
-          <input required type="radio" name="e5" /> Often
-          <br />
-          <input required type="radio" name="e5" /> Always
+          <select required name="e5" l-model="this.answers.e5">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Never</option>
+            <option>Rarely</option>
+            <option>Sometimes</option>
+            <option>Often</option>
+            <option>Always</option>
+          </select>
           <br />
         </div>
 
@@ -561,90 +550,111 @@
           44. In the past 3 months, how many times have you had a sense of loss of control AND you
           also ate what most people would regard as an unusually large amount of food at one time,
           defined as definitely more than most people would eat under similar circumstances?
-          <input required type="text" name="e6" value="" l-model="this.e6" />
+          <input required type="text" name="e6" value="" l-model="this.answers.e6" />
           <br />
         </div>
 
-        <h1>
+        <h3>
           In the past three months, how many times have you done any of the following as a means to
           control your weight and shape.
-        </h1>
+        </h3>
         <br />
         <div>
-          45. Made yourself throw-up?<input required type="text" name="e7" value="" />
+          45. Made yourself throw-up?<input
+            required
+            type="text"
+            name="e7"
+            value=""
+            l-model="this.answers.e7"
+          />
           <br />
         </div>
 
         <div>
-          46. Used diuretics or laxatives?<input required type="text" name="e8" value="" />
+          46. Used diuretics or laxatives?<input
+            required
+            type="text"
+            name="e8"
+            value=""
+            l-model="this.answers.e8"
+          />
           <br />
         </div>
 
         <div>
-          47. Exercised excessively?<input required type="text" name="e9" value="" />
+          47. Exercised excessively?<input
+            required
+            type="text"
+            name="e9"
+            value=""
+            l-model="this.answers.e8"
+          />
           <br />
         </div>
 
         <div>
-          48. Fasted?<input required type="text" name="e10" value="" />
+          48. Fasted?<input required type="text" name="e10" value="" l-model="this.answers.e10" />
           <br />
         </div>
 
         <div>
           49. Do you consume a small amount of food (i.e., less than 1200 calories/day) on a regular
           basis to influence your shape or weight?
-          <input required type="radio" name="e11" /> Yes
-          <br />
-          <input required type="radio" name="e11" /> No
-          <br />
+          <select required name="e11" l-model="this.answers.e11">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
           50. Do you struggle with a lack of interest in eating or food?
-
-          <input required type="radio" name="e12" /> Yes
-          <br />
-          <input required type="radio" name="e12" /> No
-          <br />
+          <select required name="e12" l-model="this.answers.e12">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
           51. Do you avoid certain or many foods because of such features as texture, consistency,
-          temperature, or smell, or have other people suggested this may be the case for you?
-
-          <input required type="radio" name="e13" /> Yes
-          <br />
-          <input required type="radio" name="e13" /> No
-          <br />
+          temperature, or smell, or have other people suggested this.answers.may be the case for
+          you?
+          <select required name="e13" l-model="this.answers.e13">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
-          52. Do you avoid certain or many foods because of fear of experiencing negative consequences
-          like choking or vomiting, or have other people suggested this may be the case for you?
-
-          <input required type="radio" name="e14" /> Yes
-          <br />
-          <input required type="radio" name="e14" /> No
-          <br />
+          52. Do you avoid certain or many foods because of fear of experiencing negative
+          consequences like choking or vomiting, or have other people suggested this.answers.may be
+          the case for you?
+          <select required name="e14" l-model="this.answers.e14">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
-          53. Have you experienced significant weight loss* but are not overly concerned with the size
-          or shape of your body? *Or are at a low weight for your age and height
-
-          <input required type="radio" name="e15" /> Yes
-          <br />
-          <input required type="radio" name="e15" /> No
-          <br />
+          53. Have you experienced significant weight loss* but are not overly concerned with the
+          size or shape of your body? *Or are at a low weight for your age and height
+          <select required name="e15" l-model="this.answers.e15">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
           53. Are you currently in treatment for an eating disorder?
-
-          <input required type="radio" name="e16" /> Yes
-          <br />
-          <input required type="radio" name="e16" /> No
-          <br />
+          <select required name="e16" l-model="this.answers.e16">
+            <option disabled selected value> -- select an option -- </option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
 
         <div>
@@ -653,18 +663,52 @@
             type="text"
             name="e17"
             value=""
-            l-model="this.e17"
+            l-model="this.answers.e17"
           />
           <br />
         </div>
 
         <div>
-          55. What is your current weight in pounds?<input required type="text" name="e18" value="" />
+          55. What is your current weight in pounds?<input
+            required
+            type="text"
+            name="e18"
+            value=""
+            l-model="this.answers.e18"
+          />
           <br />
         </div>
 
         <div>
-          56. What is your current height in inches?<input required type="text" name="e19" value="" />
+          56. What is your current height in inches?<input
+            required
+            type="text"
+            name="e19"
+            value=""
+            l-model="this.answers.e19"
+          />
+          <br />
+        </div>
+
+        <div>
+          57. One a scale of 1-10, rate how mentally healthy you are<input
+            required
+            type="number"
+            name="c1"
+            value=""
+            l-model="this.answers.c1"
+          />
+          <br />
+        </div>
+
+        <div>
+          57. Any comments/questions/concerns?<input
+            required
+            type="text"
+            name="c2"
+            value=""
+            l-model="this.answers.c2"
+          />
           <br />
         </div>
 
@@ -674,15 +718,6 @@
       </form>
     </div>
 
-    <script>
-      const app = Lucia.createApp({
-        d1: '',
-        submit() {
-
-        }
-      });
-
-      app.mount('#app');
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>
