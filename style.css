@@ -1,0 +1,18 @@
+:root {
+  --focus: #bf0000ab;
+  --links: #bf0000;
+}
+
+@import url('https://rsms.me/inter/inter.css');
+html {
+  font-family: 'Inter', sans-serif !important;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif !important;
+  }
+}
+
+div {
+  margin-bottom: 20px;
+}

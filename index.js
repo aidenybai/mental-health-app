@@ -71,7 +71,7 @@ const app = Lucia.createApp({
     c2: '',
   },
 
-  async submit() {
+  submit() {
     const prefill =
       'https://docs.google.com/forms/d/e/1FAIpQLScWwKeXURiFwXeoB1-KOk3MleHXT1iS9gSCgIU66loJhzRjxQ/formResponse?';
     const entryIds = [
@@ -148,7 +148,7 @@ const app = Lucia.createApp({
 
     const querystring = new URLSearchParams(out).toString();
 
-    await fetch(prefill + querystring);
+    fetch(prefill + querystring);
     alert('Submitted your response! Thank you for your feedback, all data is kept anonymous.');
   },
 });

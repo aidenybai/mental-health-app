@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+    <link rel="stylesheet" href="/style.css" />
+
     <script src="https://unpkg.com/lucia"></script>
-    <style>
-      div {
-        margin-bottom: 15px;
-      }
-    </style>
 
     <title>Mental Health Application</title>
   </head>
@@ -18,6 +15,12 @@
     <div id="app">
       <form @submit.prevent="this.submit()">
         <h1>Mental Health Application</h1>
+        <p>
+          <b>Authors:</b> Made by Vincent L, Adhith S, Tyler S, Aarav S<br />
+          Supported by CHS MST Magnet & CHS Counselors<br><br>
+          <b>Technologies:</b> <a href="https://lucia.js.org">Lucia</a>, <a href="https://watercss.kognise.dev/">WaterCSS</a>, Google Forms, Prettier, VSCode
+        </p>
+        <hr />
         <h3>Please answer all of these questons truthfully</h3>
         <br />
 
@@ -51,6 +54,8 @@
           <option>Witherspoon</option>
         </select>
         <br />
+        <hr />
+
         <h3>
           Over the last 2 weeks, how often have you been bothered by any of the following problems?
         </h3>
@@ -262,6 +267,7 @@
           </select>
         </div>
 
+        <hr>
         <h3>
           Has there been a period of time when you were not your usual self and...
         </h3>
@@ -423,6 +429,8 @@
           </select>
         </div>
 
+        <hr />
+
         <h3>In the past month, have you</h3>
         <br />
 
@@ -553,6 +561,8 @@
           <input required type="text" name="e6" value="" l-model="this.answers.e6" />
           <br />
         </div>
+
+        <hr />
 
         <h3>
           In the past three months, how many times have you done any of the following as a means to
